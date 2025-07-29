@@ -1,0 +1,32 @@
+[
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Backpack",
+    "firstname" : "Marwan",
+    "lastname" : "Hashem",
+    "PostalCode" : "63511",
+    "confirmation-message": "Thank you for your order!",
+    "landing-page-url" : "https://www.saucedemo.com/"
+  },
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Bike Light",
+    "firstname" : "Marwan",
+    "lastname" : "Hashem",
+    "PostalCode" : "63511",
+    "confirmation-message": "Thank you for your order!",
+    "landing-page-url" : "https://www.saucedemo.com/"
+  },
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Bolt T-Shirt",
+    "firstname" : "Marwan",
+    "lastname" : "Hashem",
+    "PostalCode" : "63511",
+    "confirmation-message": "Thank you for your order!",
+    "landing-page-url" : "https://www.saucedemo.com/"
+  }
+]

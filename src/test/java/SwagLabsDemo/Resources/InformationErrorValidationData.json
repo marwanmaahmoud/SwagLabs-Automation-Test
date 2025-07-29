@@ -1,0 +1,54 @@
+[
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Backpack",
+    "firstname" : "",
+    "lastname" : "Hashem",
+    "PostalCode" : "63511",
+    "error-message": "Error: First Name is required"
+  },
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Backpack",
+    "firstname" : "Marwan",
+    "lastname" : "",
+    "PostalCode" : "63511",
+    "error-message": "Error: Last Name is required"},
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Backpack",
+    "firstname" : "Marwan",
+    "lastname" : "Hashem",
+    "PostalCode" : "",
+    "error-message": "Error: Postal Code is required"
+  },
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Backpack",
+    "firstname" : "656448",
+    "lastname" : "Hashem",
+    "PostalCode" : "63511",
+    "error-message": "Error: Invalid First tName"  },
+
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Backpack",
+    "firstname" : "Marwan",
+    "lastname" : "656448",
+    "PostalCode" : "63511",
+    "error-message": "Error: Invalid Last tName"  },
+
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Backpack",
+    "firstname" : "Marwan",
+    "lastname" : "Hashem",
+    "PostalCode" : "aaaaa",
+    "error-message": "Error: Invalid Postal Code tName"  }
+]

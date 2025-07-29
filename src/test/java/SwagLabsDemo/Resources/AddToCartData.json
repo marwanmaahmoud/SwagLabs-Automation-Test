@@ -1,0 +1,17 @@
+[
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Backpack"
+  },
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Bike Light"
+  },
+  {
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "ProductName" : "Sauce Labs Bolt T-Shirt"
+  }
+]
