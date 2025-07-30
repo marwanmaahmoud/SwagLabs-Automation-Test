@@ -16,7 +16,7 @@ Build Tool: Maven
 
 Design Pattern: Page Object Model (POM)
 
-IDE: IntelliJ IDEA / Eclipse
+IDE: IntelliJ IDEA
 
 🚀 Getting Started
 
