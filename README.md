@@ -67,4 +67,5 @@ Marwan Mahmoud Hashem
 
 📧 marwanhaashem@outlook.com
 
-🔗 LinkedIn Profile
+🔗 LinkedIn Profile 
+https://www.linkedin.com/in/marwanmahmod/
