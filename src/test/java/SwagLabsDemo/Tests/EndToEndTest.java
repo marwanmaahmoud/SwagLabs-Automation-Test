@@ -2,6 +2,7 @@
 
     import SwagLabsDemo.PageObjects.*;
     import SwagLabsDemo.TestComponants.BaseTest;
+    import SwagLabsDemo.Utilis.RetryFailedTest;
     import org.testng.Assert;
     import org.testng.annotations.DataProvider;
     import org.testng.annotations.Test;
@@ -12,7 +13,7 @@
 
     public class EndToEndTest extends BaseTest {
 
-        @Test(groups ="Purchase", dataProvider = "GetData")
+        @Test(groups ="Purchase", dataProvider = "getData")
         public void submitOrder(HashMap<String,String> input) {
 
             ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"),input.get("password"));
@@ -28,7 +29,7 @@
             Assert.assertEquals(confirmationPage.Logout(),input.get("landing-page-url"));
         }
 
-        @Test(dataProvider = "GetData")
+        @Test(dataProvider = "getData")
         public void removeProduct(HashMap<String,String> input)
         {
             ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"),input.get("password"));
@@ -53,7 +54,7 @@
             Assert.assertEquals(confirmationPage.Logout(),input.get("landing-page-url"));
         }
 
-        @Test(dataProvider = "GetData")
+        @Test(dataProvider = "getData")
         public void cancelOrder(HashMap<String,String> input)
         {
             ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"),input.get("password"));
@@ -77,8 +78,54 @@
             Assert.assertEquals(confirmationPage.Logout(),input.get("landing-page-url"));
         }
 
+        @Test(dataProvider = "getData")
+        public void invalidLoginCredential(HashMap<String,String> input)
+        {
+            ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("invalidUsername"),input.get("invalidPassword"));
+            Assert.assertEquals(loginPage.GetLoginErrorMessage(),input.get("error-message"));
+            loginPage.LoginApplication(input.get("username"),input.get("password"));
+            productCatalogue.AddProductToCart(input.get("ProductName"));
+            CartPage cartPage =productCatalogue.GoToCart();
+            Assert.assertTrue(cartPage.VerifyProductInTheCart(input.get("ProductName")));
+            CheckoutPage checkoutPage = cartPage.GoToCheckoutPage();
+            checkoutPage.EnterInformation(input.get("firstname"),input.get("lastname"),input.get("PostalCode"));
+            OverViewPage overViewPage = checkoutPage.GoToCheckoutOverViewPage();;
+            Assert.assertTrue(overViewPage.CheckProductIsDisplay(input.get("ProductName")));
+            ConfirmationPage confirmationPage = overViewPage.GoToConfirmationPage();
+            Assert.assertEquals(confirmationPage.CheckConfirmationMessage(),input.get("confirmation-message"));
+            Assert.assertEquals(confirmationPage.Logout(),input.get("landing-page-url"));
+        }
+
+        @Test(dataProvider = "getData")
+        public void emptyCheckoutFields(HashMap<String,String> input)
+        {
+            ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"),input.get("password"));
+            productCatalogue.AddProductToCart(input.get("ProductName"));
+            CartPage cartPage =productCatalogue.GoToCart();
+            Assert.assertTrue(cartPage.VerifyProductInTheCart(input.get("ProductName")));
+            CheckoutPage checkoutPage = cartPage.GoToCheckoutPage();
+            checkoutPage.EnterInformation(input.get("emptyFirstname"),input.get("emptyLastname"),input.get("emptyPostalCode"));
+            checkoutPage.GoToCheckoutOverViewPage();
+            Assert.assertEquals(checkoutPage.GetInformationErrorMessage(),input.get("errorMessage"));
+            checkoutPage.EnterInformation(input.get("firstname"),input.get("lastname"),input.get("PostalCode"));
+            OverViewPage overViewPage = checkoutPage.GoToCheckoutOverViewPage();;
+            Assert.assertTrue(overViewPage.CheckProductIsDisplay(input.get("ProductName")));
+            ConfirmationPage confirmationPage = overViewPage.GoToConfirmationPage();
+            Assert.assertEquals(confirmationPage.CheckConfirmationMessage(),input.get("confirmation-message"));
+            Assert.assertEquals(confirmationPage.Logout(),input.get("landing-page-url"));
+        }
+
+        @Test(dataProvider = "getData",retryAnalyzer = RetryFailedTest.class)
+        public void emptyCart(HashMap<String,String> input)
+        {
+            ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"),input.get("password"));
+            CartPage cartPage =productCatalogue.GoToCart();
+            cartPage.GoToCheckoutPage();
+            Assert.assertEquals(cartPage.GetEmptyCartErrorMessage(),"Error : Empty Cart");
+        }
+
         @DataProvider
-        public Object[][] GetData() throws IOException {
+        public Object[][] getData() throws IOException {
             List<HashMap<String,String>> data = getJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\BaseData.json");
             return new Object[][]{{data.get(0)}};
         }

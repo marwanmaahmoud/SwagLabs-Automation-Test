@@ -33,7 +33,10 @@ public class LoginPage {
 
     public ProductCatalogue LoginApplication(String username , String password) {
 
+        UserName.clear();
         UserName.sendKeys(username);
+
+        Password.clear();
         Password.sendKeys(password);
         LoginButton.click();
         return new ProductCatalogue(driver);

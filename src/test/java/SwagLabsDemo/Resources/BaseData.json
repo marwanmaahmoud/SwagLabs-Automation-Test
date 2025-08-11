@@ -2,6 +2,8 @@
   {
     "username": "standard_user",
     "password": "secret_sauce",
+    "invalidUsername": "standardd",
+    "invalidPassword": "secret",
     "ProductName" : "Sauce Labs Backpack",
     "ProductName2" : "Sauce Labs Bike Light",
     "ProductName3" : "Sauce Labs Bolt T-Shirt",
@@ -10,6 +12,11 @@
     "lastname" : "Hashem",
     "PostalCode" : "63511",
     "confirmation-message": "Thank you for your order!",
-    "landing-page-url" : "https://www.saucedemo.com/"
+    "landing-page-url" : "https://www.saucedemo.com/",
+    "error-message": "Epic sadface: Username and password do not match any user in this service",
+    "emptyFirstname" : "",
+    "emptyLastname" : "",
+    "emptyPostalCode" : "",
+    "errorMessage": "Error: First Name is required"
   }
 ]
