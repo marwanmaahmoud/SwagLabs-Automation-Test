@@ -15,7 +15,7 @@ import java.util.List;
 
 public class ProductOverViewTest extends BaseTest {
     @Test(dataProvider = "GetData")
-    public void VerifyProductIsDisplayed(HashMap<String,String> input) {
+    public void verifyProductIsDisplayed(HashMap<String,String> input) {
         ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"), input.get("password"));
         productCatalogue.AddProductToCart(input.get("ProductName"));
         CartPage cartPage = productCatalogue.GoToCart();
@@ -24,12 +24,11 @@ public class ProductOverViewTest extends BaseTest {
         OverViewPage overViewPage = checkoutPage.GoToCheckoutOverViewPage();
         ;
         Assert.assertTrue(overViewPage.CheckProductIsDisplay(input.get("ProductName")));
-
     }
 
     @DataProvider
     public Object[][] GetData() throws IOException {
-        List<HashMap<String,String>> data = GetJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\BaseData.json");
+        List<HashMap<String,String>> data = getJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\BaseData.json");
         return new Object[][]{{data.get(0)}};
     }
 

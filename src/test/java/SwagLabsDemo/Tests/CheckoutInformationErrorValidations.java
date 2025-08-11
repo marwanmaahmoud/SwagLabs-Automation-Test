@@ -2,7 +2,6 @@ package SwagLabsDemo.Tests;
 
 import SwagLabsDemo.PageObjects.CartPage;
 import SwagLabsDemo.PageObjects.CheckoutPage;
-import SwagLabsDemo.PageObjects.OverViewPage;
 import SwagLabsDemo.PageObjects.ProductCatalogue;
 import SwagLabsDemo.TestComponants.BaseTest;
 import org.testng.Assert;
@@ -16,7 +15,7 @@ import java.util.List;
 public class CheckoutInformationErrorValidations extends BaseTest {
 
     @Test(dataProvider = "GetData")
-    public void InformationErrorValidations(HashMap<String,String> input)
+    public void informationErrorValidations(HashMap<String,String> input)
     {
         ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"),input.get("password"));
         productCatalogue.AddProductToCart(input.get("ProductName"));
@@ -30,7 +29,7 @@ public class CheckoutInformationErrorValidations extends BaseTest {
 
     @DataProvider
     public Object[][] GetData() throws IOException {
-        List<HashMap<String,String>> data = GetJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\InformationErrorValidationData.json");
+        List<HashMap<String,String>> data = getJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\InformationErrorValidationData.json");
         return new Object[][]{{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)},{data.get(4)},{data.get(5)}};
     }
 }

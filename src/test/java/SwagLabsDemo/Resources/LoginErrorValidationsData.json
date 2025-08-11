@@ -11,6 +11,11 @@
     },
   {
     "username": "",
+    "password": "12345",
+    "error-message": "Epic sadface: Username is required"
+  },
+  {
+    "username": "",
     "password": "",
     "error-message": "Epic sadface: Username is required"
   },

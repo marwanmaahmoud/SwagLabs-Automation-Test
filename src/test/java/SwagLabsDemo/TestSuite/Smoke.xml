@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="All Test Suite">
+<suite name="All Test Suite">
     <listeners>
         <listener class-name="SwagLabsDemo.Utilis.Listeners"></listener>
     </listeners>
 
-    <test verbose="2" preserve-order="true" name="Add to cart test">
+    <test verbose="2" preserve-order="true" name="End To End test">
         <classes>
-            <class name="SwagLabsDemo.Tests.CartTest"></class>
+            <class name="SwagLabsDemo.Tests.EndToEndTest"></class>
         </classes>
-        </test>
+    </test>
 </suite>

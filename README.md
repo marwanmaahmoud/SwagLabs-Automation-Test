@@ -1,10 +1,10 @@
-🧪 SwagLabs Website – Automation Testing Project
+# 🧪 SwagLabs Website – Automation Testing Project
 
-📌 Overview
+## 📌 Overview
 
 This project demonstrates automated functional testing of the SwagLabs Demo Website using Selenium WebDriver. The goal is to ensure the functionality, reliability, and usability of critical user workflows through robust test scripts.
 
-🔧 Technologies Used
+## 🔧 Technologies Used
 
 Programming Language: Java
 
@@ -18,7 +18,7 @@ Design Pattern: Page Object Model (POM)
 
 IDE: IntelliJ IDEA
 
-🚀 Getting Started
+## 🚀 Getting Started
 
 ✅ Prerequisites
 
@@ -30,11 +30,11 @@ IDE like IntelliJ IDEA or Eclipse
 
 Chrome WebDriver compatible with your browser
 
-📦 Installation
+## 📦 Installation
 
 Clone the repository
 
-🔍 Features Covered
+## 🔍 Features Covered
 
 ✅ Automated Test Cases:
 
@@ -52,16 +52,16 @@ Clone the repository
 
 Any issues or bugs found during testing are tracked and reported using standardized bug reporting templates (if you're using JIRA, Excel, or another system, mention it here).
 
-🔗 Contributing
+## 🔗 Contributing
 
 Contributions are welcome!
 Please open an issue or submit a pull request if you have suggestions, bug fixes, or improvements.
 
-📄 License
+## 📄 License
 
 This project is open source and available under the MIT License.
 
-🙋 Contact
+## 🙋 Contact
 
 Marwan Mahmoud Hashem
 

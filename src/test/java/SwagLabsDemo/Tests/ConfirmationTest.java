@@ -12,7 +12,7 @@ import java.util.List;
 
 public class ConfirmationTest extends BaseTest {
     @Test(dataProvider = "GetData",groups ="Purchase")
-    public void CheckConfirmationMessage(HashMap<String,String> input)
+    public void checkConfirmationMessage(HashMap<String,String> input)
     {
         ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"),input.get("password"));
         productCatalogue.AddProductToCart(input.get("ProductName"));
@@ -27,7 +27,7 @@ public class ConfirmationTest extends BaseTest {
     }
     @DataProvider
     public Object[][] GetData() throws IOException {
-        List<HashMap<String,String>> data = GetJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\BaseData.json");
+        List<HashMap<String,String>> data = getJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\BaseData.json");
         return new Object[][]{{data.get(0)}};
     }
 }

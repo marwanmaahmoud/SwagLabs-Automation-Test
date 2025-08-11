@@ -25,7 +25,7 @@ public class BaseTest {
 
     public WebDriver driver;
     public LoginPage loginPage;
-    public WebDriver InitializeDriver() throws IOException {
+    public WebDriver initializeDriver() throws IOException {
         Properties properties = new Properties();
         FileInputStream file = new FileInputStream(System.getProperty("user.dir") +
                 "/src/main/java/SwagLabsDemo/Resources/GlobalData.properties");
@@ -46,17 +46,16 @@ public class BaseTest {
         driver.manage().window().maximize();
         return driver;
     }
-
-    public String getScreenshot(String TestCaseName,WebDriver driver) throws IOException {
+    public String getScreenshot(String TestCaseName, WebDriver driver) throws IOException {
         TakesScreenshot ts = (TakesScreenshot)driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
-        File file = new File(System.getProperty("user.dir")+"\\src\\reports"+ TestCaseName + ".png");
+        File file = new File(System.getProperty("user.dir")+"\\reports\\reports"+ TestCaseName + ".png");
         FileUtils.copyFile(source,file);
-        return System.getProperty("user.dir")+"\\src\\reports"+ TestCaseName + ".png";
+        return System.getProperty("user.dir")+"\\reports\\reports"+ TestCaseName + ".png";
     }
 
 
-    public List<HashMap<String, String>> GetJsonDataHashmap(String filePath) throws IOException {
+    public List<HashMap<String, String>> getJsonDataHashmap(String filePath) throws IOException {
         String JsonConten = FileUtils.readFileToString((new File(filePath)
         ));
         ObjectMapper mapper = new ObjectMapper();
@@ -66,15 +65,15 @@ public class BaseTest {
 
 
     @BeforeMethod
-    public LoginPage LaunchWebsite() throws IOException {
-        driver = InitializeDriver();
+    public LoginPage launchWebsite() throws IOException {
+        driver = initializeDriver();
         loginPage = new LoginPage(driver);
         loginPage.goTo();
         return loginPage;
     }
 
     @AfterMethod
-    public void TearDown()
+    public void tearDown()
     {
         driver.quit();
     }

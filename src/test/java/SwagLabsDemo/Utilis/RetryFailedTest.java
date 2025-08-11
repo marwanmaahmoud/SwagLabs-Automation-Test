@@ -1,4 +1,4 @@
-package SwagLabsDemo.TestComponants;
+package SwagLabsDemo.Utilis;
 
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;

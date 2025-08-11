@@ -24,18 +24,19 @@ public class CartPage {
     @FindBy(id = "checkout")
     WebElement CheckoutButton;
 
-    @FindBy(css = ".item_pricebar button")
-    WebElement RemoveButton;
-
     @FindBy(css = ".cart_list")
     WebElement EmptyCartError;
 
-    By ItemNameBy = By.cssSelector(".inventory_item_name");
+    @FindBy(id = "continue-shopping")
+    WebElement continueShoppingButton;
+
+    By itemNameBy = By.cssSelector(".inventory_item_name");
+    By removeButton = By.cssSelector(".btn.btn_secondary.btn_small.cart_button");
     public boolean VerifyProductInTheCart(String ProductName)
     {
         boolean found = false;
         for (WebElement item : CartItems){
-            String ItemName = item.findElement(ItemNameBy).getText();
+            String ItemName = item.findElement(itemNameBy).getText();
             if(ItemName.equalsIgnoreCase(ProductName))
             {
                 found = true;
@@ -49,7 +50,7 @@ public class CartPage {
     {
         for(WebElement item : CartItems)
         {
-            String ItemName = item.findElement(ItemNameBy).getText();
+            String ItemName = item.findElement(itemNameBy).getText();
             if(ItemName.equalsIgnoreCase(ProductName))
             {
                 return item;
@@ -62,7 +63,8 @@ public class CartPage {
     public void RemoveItem(String ProductName)
     {
         WebElement Item = GetItemName(ProductName);
-        RemoveButton.click();
+        Item.findElement(removeButton).click();
+
 
     }
 
@@ -71,6 +73,11 @@ public class CartPage {
         CheckoutButton.click();
         return new CheckoutPage(driver);
 
+    }
+
+    public void backToHomePage()
+    {
+        continueShoppingButton.click();
     }
 
     public String GetEmptyCartErrorMessage()

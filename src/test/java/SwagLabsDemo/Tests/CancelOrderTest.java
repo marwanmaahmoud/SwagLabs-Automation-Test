@@ -28,7 +28,7 @@ public class CancelOrderTest extends BaseTest {
         }
 
         @Test(dataProvider = "GetData")
-        public void OverviewCancellation(HashMap<String,String> input)
+        public void overviewCancellation(HashMap<String,String> input)
         {
             ProductCatalogue productCatalogue = loginPage.LoginApplication(input.get("username"),input.get("password"));
             productCatalogue.AddProductToCart(input.get("ProductName"));
@@ -44,7 +44,7 @@ public class CancelOrderTest extends BaseTest {
     @DataProvider
     public Object[][] GetData() throws IOException {
 
-        List<HashMap<String,String>> data = GetJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\CancelOrderData.json");
+        List<HashMap<String,String>> data = getJsonDataHashmap(System.getProperty("user.dir")+"\\src\\test\\java\\SwagLabsDemo\\Resources\\CancelOrderData.json");
         return new Object[][]{{data.get(0)}};
     }
 }
