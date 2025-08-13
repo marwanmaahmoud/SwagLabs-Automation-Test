@@ -35,7 +35,6 @@ public class P01_LoginPage {
 
         UserName.clear();
         UserName.sendKeys(username);
-
         Password.clear();
         Password.sendKeys(password);
         LoginButton.click();

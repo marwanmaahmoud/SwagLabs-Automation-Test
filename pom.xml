@@ -140,7 +140,7 @@
       </build>
     </profile>
     <profile>
-      <id>End to End</id>
+      <id>EndToEnd</id>
       <build>
         <pluginManagement>
           <plugins>
