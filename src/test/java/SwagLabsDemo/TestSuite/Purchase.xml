@@ -7,7 +7,7 @@
 
     <test verbose="2" preserve-order="true" name="End To End test">
         <classes>
-            <class name="SwagLabsDemo.Tests.EndToEndTest"></class>
+            <class name="SwagLabsDemo.Tests.T02_EndToEndTest"></class>
         </classes>
     </test>
 </suite>

@@ -140,7 +140,7 @@
       </build>
     </profile>
     <profile>
-      <id>Smoke</id>
+      <id>End to End</id>
       <build>
         <pluginManagement>
           <plugins>
@@ -150,7 +150,7 @@
               <version>3.0.0</version>
               <configuration>
                 <suiteXmlFiles>
-                  <suiteXmlFile>src\test\java\SwagLabsDemo\TestSuite\Smoke.xml</suiteXmlFile>
+                  <suiteXmlFile>src\test\java\SwagLabsDemo\TestSuite\EndToEnd.xml</suiteXmlFile>
                 </suiteXmlFiles>
               </configuration>
             </plugin>

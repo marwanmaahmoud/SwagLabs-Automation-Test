@@ -17,6 +17,7 @@
     "emptyFirstname" : "",
     "emptyLastname" : "",
     "emptyPostalCode" : "",
-    "errorMessage": "Error: First Name is required"
+    "errorMessage": "Error: First Name is required",
+    "HomePageUrl" : "https://www.saucedemo.com/inventory.html"
   }
 ]

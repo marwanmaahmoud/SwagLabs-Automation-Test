@@ -7,7 +7,7 @@
 
     <test verbose="2" preserve-order="true" name="Login Error Validations Test">
         <classes>
-            <class name="SwagLabsDemo.Tests.LoginErrorValidationsTest"></class>
+            <class name="SwagLabsDemo.Tests.T01_LoginErrorValidationsTest"></class>
         </classes>
         </test>
 </suite>

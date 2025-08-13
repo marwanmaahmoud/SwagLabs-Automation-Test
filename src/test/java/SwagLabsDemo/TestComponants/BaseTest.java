@@ -24,7 +24,7 @@ import java.util.Properties;
 public class BaseTest {
 
     public WebDriver driver;
-    public LoginPage loginPage;
+    public P01_LoginPage loginPage;
     public WebDriver initializeDriver() throws IOException {
         Properties properties = new Properties();
         FileInputStream file = new FileInputStream(System.getProperty("user.dir") +
@@ -65,9 +65,9 @@ public class BaseTest {
 
 
     @BeforeMethod
-    public LoginPage launchWebsite() throws IOException {
+    public P01_LoginPage launchWebsite() throws IOException {
         driver = initializeDriver();
-        loginPage = new LoginPage(driver);
+        loginPage = new P01_LoginPage(driver);
         loginPage.goTo();
         return loginPage;
     }

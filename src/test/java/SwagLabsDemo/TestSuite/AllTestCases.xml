@@ -6,42 +6,37 @@
     </listeners>
     <test verbose="2" preserve-order="true" name="End To End test">
         <classes>
-            <class name="SwagLabsDemo.Tests.EndToEndTest"></class>
+            <class name="SwagLabsDemo.Tests.T02_EndToEndTest"></class>
         </classes>
     </test>
     <test verbose="2" preserve-order="true" name="Login Error Validations Test">
         <classes>
-            <class name="SwagLabsDemo.Tests.LoginErrorValidationsTest"></class>
+            <class name="SwagLabsDemo.Tests.T01_LoginErrorValidationsTest"></class>
         </classes>
         </test>
     <test verbose="2" preserve-order="true" name="Add to cart test">
         <classes>
-            <class name="SwagLabsDemo.Tests.CartTest"></class>
+            <class name="SwagLabsDemo.Tests.T03_CartTest"></class>
         </classes>
         </test>
     <test verbose="2" preserve-order="true" name="Order Overview Test">
         <classes>
-            <class name="SwagLabsDemo.Tests.ProductOverViewTest"></class>
+            <class name="SwagLabsDemo.Tests.T05_OverViewTest"></class>
         </classes>
         </test>
         <test verbose="2" preserve-order="true" name="Order Confirmation test">
          <classes>
-             <class name="SwagLabsDemo.Tests.ConfirmationTest"></class>
+             <class name="SwagLabsDemo.Tests.T06_ConfirmationTest"></class>
          </classes>
      </test>
      <test name="Information Error Validation">
          <classes>
-             <class name="SwagLabsDemo.Tests.CheckoutInformationErrorValidations"></class>
+             <class name="SwagLabsDemo.Tests.T04_CheckoutTest"></class>
          </classes>
      </test>
      <test name="Successfully Logout">
         <classes>
-            <class name="SwagLabsDemo.Tests.LogoutSuccessfullyTest"></class>
-        </classes>
-    </test>
-    <test name="Successfully Cancellation">
-        <classes>
-            <class name="SwagLabsDemo.Tests.CancelOrderTest"></class>
+            <class name="SwagLabsDemo.Tests.T07_LogoutSuccessfullyTest"></class>
         </classes>
     </test>
 </suite>

@@ -7,7 +7,7 @@
 
      <test name="Information Error Validation">
          <classes>
-             <class name="SwagLabsDemo.Tests.CheckoutInformationErrorValidations"></class>
+             <class name="SwagLabsDemo.Tests.T04_CheckoutTest"></class>
          </classes>
      </test>
 </suite>
